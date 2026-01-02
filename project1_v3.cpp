@@ -20,7 +20,7 @@ int main(){
     do{
         gamesplayed++;
 
-
+        //Choose Difficulty
         int difficulty;
         int maxnumber; int maxattempts;
 
@@ -32,7 +32,7 @@ int main(){
         cout << "Enter choice (1-3): ";
         cin >> difficulty;
 
-
+        //Set parameters according to the difficulty
         if(difficulty == 1){
             maxnumber = 50;
             maxattempts = 10;
@@ -63,7 +63,8 @@ int main(){
         cout << "I am guessing of the no. between 1 to " << maxnumber << endl;
         cout << "You have " << maxattempts << " attempts" << endl;
         cout << endl;
-
+ 
+        //Guessing loop with limited attempts
         while(attempts < maxattempts){
             cout << "Attempts " << (attempts + 1) << "/" << maxattempts << " ---Enter Your Guess--- " << endl;
             cin >> guess;
@@ -80,9 +81,10 @@ int main(){
                 cout << "CONGRATULATION! YOU WON" << endl;
                 cout << "The number was " << secretnumber << endl; 
                 cout << "You used " << attempts << " out of " << maxattempts << endl;
-
+                
+                //calculating the score
                 int score = (maxattempts - attempts + 1) * 10;
-                cout << "score: " << score << "points" << endl;
+                cout << "score: " << score << " points" << endl;
 
                 gameswon++;
                 won = true;
@@ -90,18 +92,21 @@ int main(){
                 break;
                 }
 
+                //Calculating the remaining attempts
                 if(attempts < maxattempts){
                     cout << "Attempts remaining: " << (maxattempts - attempts) << endl;
                     cout << endl;
             }
         }
 
+        //If ran out of attempts
         if(!won){
             cout << endl;
             cout << "Game Over! You ran out of attempts." << endl;
             cout << "The no. was " << secretnumber << endl;
         }
 
+        //Ask to play again
         cout << endl;
         cout << "Play Again(Y/N)" << endl;
         cin >> playagain;
@@ -109,6 +114,7 @@ int main(){
     }while( playagain == 'Y' || playagain == 'y');
 
 
+    //Final Statistics
     cout << endl;
     cout << "================================" << endl;
     cout << "      FINAL STATISTICS" << endl;

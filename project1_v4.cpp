@@ -11,7 +11,7 @@ int main() {
     int totalAttempts = 0;
     int gamesWon = 0;
     int highScore = 0;
-    int fastestTime = 999999;   // no climits used
+    int fastestTime = 999999;   // no c limits used
 
     cout << endl;
     cout << " NUMBER GUESSING GAME v4.1 " << endl;
@@ -54,7 +54,7 @@ int main() {
             cout << " HARD MODE ACTIVATED" << endl;
         }
 
-        time_t startTime = time(0);
+        time_t startTime = time(0); //Time Started
 
         int secretNumber = rand() % maxNumber + 1;
         int guess;
@@ -79,6 +79,7 @@ int main() {
 
             attempts++;
 
+            // Giving Hints
             if (guess < secretNumber) {
                 cout << " Too low!" << endl;
 
@@ -106,8 +107,8 @@ int main() {
                     cout << " Hint: Very close! Slightly lower!" << endl;
             }
             else {
-                time_t endTime = time(0);
-                int timeTaken = endTime - startTime;
+                time_t endTime = time(0); // Time Stop
+                int timeTaken = endTime - startTime; // Calculating Time Taken
 
                 cout << endl;
                 cout << " WINNER! CORRECT! " << endl;
@@ -130,7 +131,7 @@ int main() {
 
                 if (score > highScore) {
                     highScore = score;
-                    cout << " NEW HIGH SCORE!" << endl;
+                    cout << " NEW HIGH SCORE!" << endl; // Calculating Highscore
                 }
 
                 won = true;
@@ -139,12 +140,15 @@ int main() {
                 break;
             }
 
+            // show Remaining Attempts
             if (attempts < maxAttempts) {
                 cout << " Remaining attempts: " << (maxAttempts - attempts) << endl;
             }
             cout << endl;
         }
 
+
+        // Attempts Over
         if (!won) {
             time_t endTime = time(0);
             int timeTaken = endTime - startTime;
@@ -156,12 +160,14 @@ int main() {
             cout << " Better luck next time!" << endl;
         }
 
+        // Play again
         cout << endl;
         cout << "Play again? (y/n): ";
         cin >> playAgain;
 
     } while (playAgain == 'y' || playAgain == 'Y');
 
+    // Final Statistics
     cout << endl;
     cout << " FINAL STATISTICS " << endl;
     cout << " Games played: " << gamesPlayed << endl;
@@ -179,7 +185,7 @@ int main() {
     cout << " High score: " << highScore << " points" << endl;
 
     if (fastestTime < 999999) {
-        cout << " Fastest win: " << fastestTime << " seconds" << endl;
+        cout << " Fastest win: " << fastestTime << " seconds" << endl; // Show Time record
     }
 
     cout << endl;

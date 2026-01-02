@@ -15,7 +15,7 @@ int main(){
     cout << "================================" << endl;
     cout << endl;
     
-    
+    // outer loop: play multiple games
     do {
         gamesplayed++;
         
@@ -27,7 +27,7 @@ int main(){
         cout << "I'm thinking of a number between 1 and 100" << endl;
         cout << endl;
         
-        
+        // Inner loop: Play guessing game 
         while (true) {
             cout << "Enter your guess: ";
             cin >> guess;
@@ -49,12 +49,14 @@ int main(){
                 break;
             }
         }
-
+        
+        //Ask to play again
         cout << endl;
         cout << "PlayAgain (Y/N)" << endl;
         cin >> playagain;
     } while( playagain == 'Y' || playagain == 'y' );
-
+ 
+    //Final Statistics
      cout << endl;
     cout << "================================" << endl;
     cout << "      GAME STATISTICS" << endl;
