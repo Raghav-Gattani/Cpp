@@ -73,30 +73,30 @@ void ShowChoices(char choice){
 void ChooseWinner(char player, char computer){
 
     switch(player){
-        case 'r': if(computer = 'r'){
+        case 'r': if(computer == 'r'){
                     cout << "It's a TIE" << endl;
                   }
-                  else if (computer = 'p'){
+                  else if (computer == 'p'){
                     cout << "You LOOSE!" << endl; 
                   }
                   else {
                     cout << "You WON!" << endl;
                   }
                   break;
-        case 'p': if(computer = 'r'){
+        case 'p': if(computer == 'r'){
                     cout << "You WON!" << endl;
                   }
-                  else if (computer = 'p'){
+                  else if (computer == 'p'){
                     cout << "It's a TIE" << endl; 
                   }
                   else {
                     cout << "You LOOSE!" << endl;
                   }
                   break;
-        case 's': if(computer = 'r'){
+        case 's': if(computer == 'r'){
                     cout << "You LOOSE!" << endl;
                   }
-                  else if (computer = 'p'){
+                  else if (computer == 'p'){
                     cout << "You WON!" << endl; 
                   }
                   else {
