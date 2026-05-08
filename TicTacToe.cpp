@@ -64,7 +64,7 @@ void Playermove(char *spaces, char player){
 
     int number;
     do{
-        cout << "Enter a Number Between (0-8): ";
+        cout << "Enter a Number Between (1-9): ";
         cin >> number;
           number--;
 
